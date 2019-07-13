@@ -1,0 +1,50 @@
+<div>
+<% include header.ejs%>
+
+这是一个index ejs:  <%=title%>
+</div>
+
+
+<p>获取ctx.state公共数据</p>
+<%=userinfo%>
+
+
+<p>数据库数据</p>
+
+<div>
+
+<a href="/add">增加用户</a>
+<table>
+<thead>
+  <tr>
+        <td>
+     姓名
+        </td>
+        <td>
+     性别
+       </td>
+        <td>
+      操作
+       </td>
+  </tr>
+</thead>
+
+<tbody>
+    <%for(var i=0;i<list.length;i++) { %>
+    <tr>
+      <td> <%= list[i].name%></td>
+      <td><%= list[i].age  %></td>
+      <td> <a href="/edit?id=<%= list[i]._id  %>">编辑</a>  <a href="/delete?id=<%= list[i]._id  %>">删除</a></td>
+
+    </tr>
+
+    <% }%>
+    
+   
+
+
+</tbody>
+
+</table>
+
+</div>
